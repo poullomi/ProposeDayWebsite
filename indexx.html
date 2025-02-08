@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propose Day Wish</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3366;
+        }
+        .chocolates, .flowers {
+            position: absolute;
+            width: 50px;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Propose Day, My Love! 💖</h1>
+        <p>To my sweetpotato by face, karela by words and mood at times! 😆💖</p>
+        <p>You make days special. I know this might come off as cringe, but every cringe is cute when it comes to you. 😘</p>
+        <p>Here's something for my cute programmer boyfriend. You better not say no to anything and reject me. 💕</p>
+        
+        <p>Do you love me?</p>
+        <button onclick="loveResponse(true)">Yes</button>
+        <button onclick="loveResponse(false)">No</button>
+        
+        <div id="gift" style="display: none;">
+            <p>Do you want some chocolates and flowers? 🍫🌸</p>
+            <button onclick="showGifts()">Yes</button>
+        </div>
+        
+        <div id="giftsDisplay" style="display: none;">
+            <p>Here are your virtual chocolates and flowers until we meet! 🍫🌸😊</p>
+        </div>
+        
+        <div id="hug" style="display: none;">
+            <p>Can I give you a hug because I miss you? 🤗</p>
+            <button onclick="playSong()">Yes</button>
+        </div>
+    </div>
+
+    <script>
+        function loveResponse(isYes) {
+            if (isYes) {
+                alert("Yay! orr koi option hi nhi hai! ❤️🥰");
+                document.getElementById("gift").style.display = "block";
+            } else {
+                alert("Up waale logo k liye Assam se phool hahaha! 💕");
+            }
+        }
+        
+        function showGifts() {
+            document.getElementById("giftsDisplay").style.display = "block";
+            document.getElementById("hug").style.display = "block";
+            startAnimation();
+        }
+
+        function playSong() {
+            alert("Playing 'Kahaan Ho Tum' by Prateek Kuhad... 🎶❤️");
+            window.open("https://www.youtube.com/watch?v=https://youtu.be/AYeTdojdQnU?si=6oCQPP7ldHAWGAy8", "_blank");
+        }
+
+        function startAnimation() {
+            for (let i = 0; i < 15; i++) {
+                let chocolate = document.createElement("img");
+                chocolate.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_%28blue_background%29.jpg/640px-Chocolate_%28blue_background%29.jpg";
+                chocolate.className = "chocolates";
+                chocolate.style.left = Math.random() * 100 + "vw";
+                chocolate.style.animationDuration = (Math.random() * 2 + 2) + "s";
+                document.body.appendChild(chocolate);
+
+                let flower = document.createElement("img");
+                flower.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Rosa_Red_Chateau01.jpg/640px-Rosa_Red_Chateau01.jpg";
+                flower.className = "flowers";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (Math.random() * 2 + 2) + "s";
+                document.body.appendChild(flower);
+            }
+        }
+    </script>
+</body>
+</html>
