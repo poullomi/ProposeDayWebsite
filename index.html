@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propose Day Wish</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Propose Day, My Love! 💖</h1>
+        <p>You make every day special, and I want to make this day special for you! 💕</p>
+        
+        <p>Do you love me?</p>
+        <button onclick="loveResponse(true)">Yes</button>
+        <button onclick="loveResponse(false)">No</button>
+        
+        <div id="gift" style="display: none;">
+            <p>Do you want some chocolates and flowers? 🍫🌸</p>
+            <button onclick="showGifts()">Yes</button>
+        </div>
+        
+        <div id="giftsDisplay" style="display: none;">
+            <p>Here are your virtual chocolates and flowers until we meet! 🍫🌸😊</p>
+        </div>
+        
+        <div id="hug" style="display: none;">
+            <p>Can I give you a hug because I miss you? 🤗</p>
+            <button onclick="playSong()">Yes</button>
+        </div>
+    </div>
+
+    <script>
+        function loveResponse(isYes) {
+            if (isYes) {
+                alert("Yay! orr koi option hi nhi hai!❤️🥰");
+                document.getElementById("gift").style.display = "block";
+            } else {
+                alert("up waale logo k liye assam se phool hahaha! 💕");
+            }
+        }
+        
+        function showGifts() {
+            document.getElementById("giftsDisplay").style.display = "block";
+            document.getElementById("hug").style.display = "block";
+        }
+
+        function playSong() {
+            alert("Playing 'Kahaan Ho Tum' by Prateek Kuhad... 🎶❤️");
+            window.open("https://www.youtube.com/watch?v=YOUR_VIDEO_LINK_HERE", "_blank");
+        }
+    </script>
+</body>
+</html>
